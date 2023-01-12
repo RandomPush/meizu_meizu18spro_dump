@@ -1,0 +1,43 @@
+;===================================================
+; $Project Name: MEIZU 8x8 (Phone) $
+; $Solution: 8x8UD, 550um $
+; $Revision: $
+; $Change: $
+; $DateTime: $
+;===================================================
+
+;============================
+; LOG related configurations
+;============================
+;LOGGING_ENABLED=1
+;LOG_PRIORITY=3
+
+;=============================
+;HRM APP sensor position for 2192
+;============================
+EP_SENSOR_X=605
+EP_SENSOR_Y=2317
+EP_TOUCH_PIXEL=20.704,20.704
+
+;============================
+; CRACK DETECTOR
+;============================
+CRACK_DETECTION_CONSEC_DETECTION_DIRTY=3
+CRACK_DETECTION_CONSEC_DETECTION_CRACK=5
+CRACK_DETECTION_ENROLL_CRACK_CLASSIFIER_TH=0.3
+
+;============================
+; IVV related configurations
+;============================
+IVV_ENABLED=0
+HRM_IVV_ENABLE=0
+IVV_WRITE_INTERMEDIATE_DATA_ENABLED=0
+IVV_WRITE_ONLY_FINAL_IMAGE=0
+IVV_WRITE_AIR_IMAGE=1
+IVV_WRITE_SAVE_INVERSION_FINAL_IMAGE=0
+IVV_DS_WRITE_FINAL_IMAGE=0
+IVV_DS_WRITE_INTERMEDIATE_DATA_ENABLED=0
+IVV_BUFFER_ENABLE=0
+IVV_CUSTOMER_MODE_ENABLE=0
+CBGE_IVV_ENABLE=1
+IVV_WRITE_SAVE_LSS_FINAL_IMAGE=1

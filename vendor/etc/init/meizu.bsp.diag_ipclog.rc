@@ -1,0 +1,11 @@
+service diag_ipclog /vendor/bin/diag_ipclog -o /data/vendor/diag_ipclogs -i10
+    class late_start
+    user system
+    group system oem_2901 sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
+
+
+# initialize default state of diag_ipclog
+on boot
+    setprop vendor.diag_ipclog.state stopped

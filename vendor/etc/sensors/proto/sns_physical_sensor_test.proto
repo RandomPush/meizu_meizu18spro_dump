@@ -1,0 +1,111 @@
+// @file sns_physical_sensor_test.proto
+//
+// Defines test API message types for physical sensors.
+//
+// All physical Sensor drivers are required to use this API to support
+// self-test. SNS_PHYSICAL_SENSOR_TEST_TYPE_COM is a mandatory test type and must be
+// implemented in all physical Sensor drivers. Any new or device-specific
+// test type may be defined in the Sensor-specific API.
+//
+// Copyright (c) 2016-2018 Qualcomm Technologies, Inc.
+// All Rights Reserved.
+// Confidential and Proprietary - Qualcomm Technologies, Inc.
+
+syntax = "proto2";
+import "nanopb.proto";
+
+enum sns_physical_sensor_test_msgid
+{
+  option (nanopb_enumopt).long_names = false;
+
+  // Test config request to a physical Sensor
+  SNS_PHYSICAL_SENSOR_TEST_MSGID_SNS_PHYSICAL_SENSOR_TEST_CONFIG = 515;
+  SNS_PHYSICAL_SENSOR_TEST_MSGID_SNS_PHYSICAL_SENSOR_TOUCHSCREEN_CONFIG = 516;
+
+  // Test event message from a physical Sensor
+  SNS_PHYSICAL_SENSOR_TEST_MSGID_SNS_PHYSICAL_SENSOR_TEST_EVENT  = 1026;
+  SNS_PHYSICAL_SENSOR_TEST_MSGID_SNS_MEIZU_SENSOR_TEST_EVENT  = 1027;
+}
+
+// Supported test types for physical sensors
+enum sns_physical_sensor_test_type
+{
+  option (nanopb_enumopt).long_names = false;
+
+  // Software test.
+  SNS_PHYSICAL_SENSOR_TEST_TYPE_SW = 0;
+
+  // Sensor Hardware test.
+  SNS_PHYSICAL_SENSOR_TEST_TYPE_HW = 1;
+
+  // Factory test used for Sensor calibration.
+  SNS_PHYSICAL_SENSOR_TEST_TYPE_FACTORY = 2;
+
+  // Communication bus test.
+  SNS_PHYSICAL_SENSOR_TEST_TYPE_COM = 3;
+
+  //meizu sensor test.
+  SNS_MEIZU_SENSOR_TEST_RAW_DATA = 10;
+  SNS_MEIZU_SENSOR_TEST_DATA1 =	11;
+  SNS_MEIZU_SENSOR_TEST_DATA2 = 12;
+  SNS_MEIZU_SENSOR_TEST_DATA3 = 13;
+
+  //meizu touchscreen type
+  SNS_MEIZU_TOUCHSCREEN_TYPE_WHITE = 20;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_WHITEA = 21;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_WHITEB = 22;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_WHITEC = 23;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_WHITED = 24;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_WHITEE = 25;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_WHITEF = 26;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_WHITEG = 27;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_WHITEH = 28;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_WHITEI = 29;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_BLACK = 30;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_BLACKA = 31;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_BLACKB = 32;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_BLACKC = 33;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_BLACKD = 34;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_BLACKE = 35;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_BLACKF = 36;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_BLACKG = 37;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_BLACKH = 38;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_BLACKI = 39;
+  SNS_MEIZU_TOUCHSCREEN_TYPE_BLACKK = 40;
+}
+
+// Physical Sensor test configuration request
+message sns_physical_sensor_test_config
+{
+  // Requested test type.
+  required sns_physical_sensor_test_type test_type = 1;
+}
+
+// Physical Sensor test event
+message sns_physical_sensor_test_event
+{
+  // Result if the test execution was successful:
+  // true for success
+  // false for failure
+  required bool test_passed = 1 [default = true];
+
+  // test_type from sns_physical_sensor_test_config that
+  // this event corresponds to
+  required sns_physical_sensor_test_type test_type = 2 [default = SNS_PHYSICAL_SENSOR_TEST_TYPE_COM];
+
+  // Driver specific test data. This field can be used
+  // to pass additional information like failure codes, debug data, etc.
+  optional bytes test_data = 3;
+}
+
+// Self-test and streaming concurrency requirements:
+// 1. If the sensor is streaming and there is a client request to run
+//    self-test (any test type) then the driver:
+//      a. Pauses the stream
+//      b. Executes the self-test request to completion
+//      c. Resumes stream
+// 2. If the self-test is running and there is a client request to start
+//    a sensor stream then the driver:
+//      a. Rejects the stream request
+//      b. Continues executing the self-test request to completion
+
