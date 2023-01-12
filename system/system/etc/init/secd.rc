@@ -1,0 +1,3 @@
+service secd_exec /system/bin/secd
+    class main
+

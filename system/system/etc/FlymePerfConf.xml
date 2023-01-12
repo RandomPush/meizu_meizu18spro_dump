@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<BoostConfigs>
+	<PerfBoost>
+		<!--WeixinLuckyMoney boost-->
+		<!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
+		<!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
+		<!-- CPUBOOST_MAX_FREQ PRIME Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ PRIME Core resource opcode, value-->
+		<!-- GPU MIN_FREQUENCY resource opcode,value-->
+		<!-- Type="", WeixinLuckyMoney boost -->
+		<Config
+			Id="0x00002020" Enable="true" Timeout="3000" Target="lahaina" Desc="WeixinLuckyMoney"
+			Resources="0x40804000, 2419, 0x40804100, 1804, 0x40804200, 2381,
+					   0x40800000, 1996, 0x40800100, 1804, 0x42804000, 9" />
+
+		<!--FingerFunction boost-->
+		<!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
+		<!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
+		<!-- CPUBOOST_MAX_FREQ PRIME Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ PRIME Core resource opcode, value-->
+		<!-- GPU MIN_FREQUENCY resource opcode,value-->
+		<!-- Type="", FingerFunction boost -->
+		<Config
+			Id="0x00002021" Enable="true" Timeout="1000" Target="lahaina" Desc="FingerFunction"
+			Resources="0x40804000, 2419, 0x40804100, 1804, 0x40804200, 2381,
+					   0x40800000, 1996, 0x40800100, 1804, 0x40800200, 2381, 0x42804000, 9" />
+
+		<!--CtsSensorTest boost-->
+		<!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
+		<!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
+		<!-- CPUBOOST_MAX_FREQ PRIME Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ PRIME Core resource opcode, value-->
+		<!-- GPU MIN_FREQUENCY resource opcode,value-->
+		<!-- Type="", CtsSensorTest boost -->
+		<Config
+			Id="0x00002022" Enable="true" Timeout="360000" Target="lahaina" Desc="CtsSensorTest"
+			Resources="0x40804000, 2419, 0x40804100, 1804, 0x40804200, 2381,
+					   0x40800000, 1996, 0x40800100, 1804, 0x42804000, 9" />
+
+		<!--AppInstall boost-->
+		<!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
+		<!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
+		<!-- CPUBOOST_MAX_FREQ PRIME Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ PRIME Core resource opcode, value-->
+		<!-- GPU MIN_FREQUENCY resource opcode,value-->
+		<!-- Type="", AppInstall boost -->
+		<Config
+			Id="0x00002023" Enable="true" Target="lahaina" Desc="AppInstall"
+			Resources="0x40804000, 2419, 0x40804100, 1804, 0x40804200, 2381,
+					   0x40800000, 1996, 0x40800100, 1804, 0x42804000, 9" />
+
+		<!--AppFastInstall boost-->
+		<!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
+		<!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
+		<!-- CPUBOOST_MAX_FREQ PRIME Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ PRIME Core resource opcode, value-->
+		<!-- GPU MIN_FREQUENCY resource opcode,value-->
+		<!-- Type="", AppFastInstall boost -->
+		<Config
+			Id="0x00002024" Enable="true" Target="lahaina" Desc="AppFastInstall"
+			Resources="0x40804000, 2419, 0x40804100, 1804, 0x40804200, 2381,
+					   0x40800000, 1996, 0x40800100, 1804, 0x42804000, 9" />
+
+		<!--CameraFBStart boost-->
+		<!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
+		<!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
+		<!-- CPUBOOST_MAX_FREQ PRIME Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ PRIME Core resource opcode, value-->
+		<!-- GPU MIN_FREQUENCY resource opcode,value-->
+		<!-- Type="", CameraFBStart boost -->
+		<Config
+			Id="0x00002025" Enable="true" Timeout="2000" Target="lahaina" Desc="CameraFBStart"
+			Resources="0x40804000, 2419, 0x40804100, 1804, 0x40804200, 2381,
+					   0x40800000, 1996, 0x40800100, 1804, 0x42804000, 9" />
+
+		<!--SfWindowBlur boost-->
+		<!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
+		<!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
+		<!-- CPUBOOST_MAX_FREQ PRIME Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
+		<!-- CPUBOOST_MIN_FREQ PRIME Core resource opcode, value-->
+		<!-- GPU MIN_FREQUENCY resource opcode,value-->
+		<!-- Type="", SfWindowBlur boost -->
+		<Config
+			Id="0x00002027" Enable="true" Target="lahaina" Desc="SfWindowBlur"
+			Resources="0x40804000, 2419, 0x40804100, 1804, 0x40804200, 2381,
+					   0x42804000, 4" />
+
+		<!--hotappfling boost-->
+		<Config
+			Id="0x00003001" Enable="true" Timeout="1000" Target="lahaina" Desc="com.sina.weibo" Scene="VerticalFling"
+			Resources="0x43000000, 0x19, 0x40800000, 1000, 0x40800100, 1000, 0x40800200, 1000,
+                       0x40804000, 2381, 0x40804100, 0xFFF, 0x40804200, 2112,
+                       0x40C00000, 0x2, 0x43400000, 0x1F40, 0x40C74000, 0xFF, 0x40408000, 0x63,
+                       0x41000000, 3, 0x40C78000, 0, 0x40C7C000, 0, 0x40CA8000, 4" />
+		<Config
+			Id="0x00003001" Enable="true" Timeout="1000" Target="lahaina" Desc="com.tencent.mm" Scene="VerticalFling"
+			Resources="0x43000000, 0x19, 0x40800000, 1000, 0x40800100, 1000, 0x40800200, 1000,
+                       0x40804000, 2381, 0x40804100, 0xFFF, 0x40804200, 2112,
+                       0x40C00000, 0x2, 0x43400000, 0x1F40, 0x40C74000, 0xFF, 0x40408000, 0x63,
+                       0x41000000, 3, 0x40C78000, 0, 0x40C7C000, 0, 0x40CA8000, 4" />
+
+	</PerfBoost>
+</BoostConfigs>
